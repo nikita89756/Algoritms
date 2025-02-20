@@ -1,5 +1,19 @@
 package main
 
+import "fmt"
+
+func main() {
+	var n, x int
+	fmt.Scan(&n, &x)
+	mas := make([]int, n)
+	for i := 0; i < n; i++ {
+
+		fmt.Scan(&mas[i])
+	}
+	index := binarySearch(mas, x, n)
+	fmt.Println(index)
+}
+
 func binarySearch(mas []int, x int, n int) int {
 	l := 0
 	r := n - 1
@@ -11,7 +25,7 @@ func binarySearch(mas []int, x int, n int) int {
 			res = m
 			r = m - 1
 		} else {
-			r = m + 1
+			l = m + 1
 		}
 
 	}
